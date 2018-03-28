@@ -35,3 +35,18 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+<form action="{postback_url_to_my_backend}" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js"
+    class="stripe-button"
+    data-key="pk_test_WMYV3w0Be1UNRelW2j3dtbvQ"
+    data-image="assets/mathieu.jpg"
+    data-name="name..."
+    data-description="description..."
+    data-amount="250"
+    data-locale="auto"
+    data-panel-label="panel-label..."
+    data-label="2.50$ pour un café">
+  </script>
+</form>
