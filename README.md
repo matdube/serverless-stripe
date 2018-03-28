@@ -18,11 +18,11 @@
 
 index.html
 ```html
-<form action="{postback_url_to_my_backend}" method="POST">
+<form action="{serverless_function_url}" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"
-    data-key="pk_test_WMYV3w0Be1UNRelW2j3dtbvQ"
+    data-key="{stripe_public_key}"
     data-image="assets/mathieu.jpg"
     data-name="name..."
     data-description="description..."
@@ -36,7 +36,7 @@ index.html
 
 ### Résultat:
 
-<form action="{postback_url_to_my_backend}" method="POST">
+<form action="https://serverless-stripe.azurewebsites.net/api/HttpTriggerJS1?code=yVmocxR62ilBxFq1wEPbupEjFnVEqouj56AHHPdr6b1I7g3aaCNXcw==" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"
