@@ -23,13 +23,13 @@ index.html
     src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"
     data-key="{stripe_public_key}"
-    data-image="assets/mathieu.jpg"
+    data-image="assets/whatever.png"
     data-name="name..."
     data-description="description..."
     data-amount="250"
     data-locale="auto"
     data-panel-label="panel-label..."
-    data-label="2.50$ pour un café">
+    data-label="label...">
   </script>
 </form>
 ```
@@ -42,12 +42,12 @@ index.html
     class="stripe-button"
     data-key="pk_test_WMYV3w0Be1UNRelW2j3dtbvQ"
     data-image="assets/mathieu.jpg"
-    data-name="name..."
-    data-description="description..."
+    data-name="Blog de Mathieu"
+    data-description="Un petit encouragement?"
     data-amount="250"
     data-locale="auto"
-    data-panel-label="panel-label..."
-    data-label="2.50$ pour un café">
+    data-panel-label="2.50$ pour m'encourager"
+    data-label="2.50$ pour m'encourager">
   </script>
 </form>
 
