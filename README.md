@@ -1,18 +1,45 @@
 ## Comment accepter des paiements Stripe en 5 minutes gr­ace aux Azure Functions
 
-...
+### 1. Ouvrir un compte Stripe et obtenir les clés d'API
 
-### Ouvrir un compte Stripe
+![stripe-dashboard](assets/stripe-dashboard.png)
 
-...
+### 2. Créer la fonction serverless
 
-### Créer la fonction serverless
+![new-http-trigger](assets/new-http-trigger.png)
 
-...
+index.js
+```javascript
+var stripe = require('stripe');
 
-#### Code back-end:
+function parseRawBody(raw) {
+    var body = {};
+    var items = raw.substr(0).split('&');
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i].split('=');
+        body[decodeURIComponent(item[0])] = decodeURIComponent(item[1] || '').replace(new RegExp("\\+", 'g'), ' ');
+    }
+    return body;
+}
 
-...
+module.exports = function(context, req) {
+    var body = parseRawBody(req.body);
+
+    stripe(process.env.stripeKey).charges.create({
+        amount: 250,
+        currency: 'cad',
+        source: body.stripeToken,
+        description: 'Cafe'
+    }, function (error, response) {
+        if (error) context.log.error(error.message);
+        if (response) context.log.info(JSON.stringify(response));
+
+        context.res.status = (error ? 400 : 200);
+        context.res.setHeader('content-type', 'text/html; charset=utf-8');
+        context.res.raw('<h1>' + (error ? error.message : 'Merci beaucoup!') + '</h1>');
+    });
+}
+```
 
 #### Code front-end:
 
