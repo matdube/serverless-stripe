@@ -63,7 +63,7 @@ index.html
 
 ### Résultat:
 
-<form action="https://serverless-stripe.azurewebsites.net/api/HttpTriggerJS1?code=yVmocxR62ilBxFq1wEPbupEjFnVEqouj56AHHPdr6b1I7g3aaCNXcw==" method="POST">
+<form action="https://serverless-stripe.azurewebsites.net/api/AcceptStripePayments?code=zkkdkOXIJcasXgXaWbMFedS9ITqMrgJJPcO7nOWtSTkoMvwFWvpayw==" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"
